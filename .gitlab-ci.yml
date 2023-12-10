@@ -28,8 +28,7 @@ stages:
 build:
   stage: build
   script:
-    - docker build -t kormunity_web .
-    - docker tag kormunity_web $DOCKER_USERNAME/kormunity_web:latest
+    - docker build -t $DOCKER_USERNAME/kormunity_web:latest .
 
 push:
   stage: push
