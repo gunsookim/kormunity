@@ -22,17 +22,13 @@ services:
   - docker:dind
 
 stages:
-  - build
-  - push
+  - build and push
 
 build:
-  stage: build
-  script:
-    - docker build -t $DOCKER_USERNAME/kormunity_web:latest .
-
-push:
-  stage: push
+  stage: build and push
   script:
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    - docker build -t $DOCKER_USERNAME/kormunity_web:latest .
     - docker push $DOCKER_USERNAME/kormunity_web:latest
+
 
