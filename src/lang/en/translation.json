@@ -1,0 +1,12 @@
+{
+  "header": {
+    "language": "Language",
+    "news": "News",
+    "notice": "Notice",
+    "contact": "Contact"
+  },
+  "nav": {
+    "dashboard": "대시보드",
+    "shopping-mall": "쇼핑몰 관리"
+  }
+}
