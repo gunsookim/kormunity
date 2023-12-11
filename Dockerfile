@@ -10,10 +10,11 @@ RUN npm run build
 FROM nginx:alpine
 
 # 필요한 디렉토리 생성 및 권한 설정
-RUN mkdir -p /var/cache/nginx/client_temp /var/run /var/tmp/nginx \
-    && chown -R nginx:nginx /var/cache/nginx /var/run /var/tmp/nginx
+RUN mkdir -p /var/tmp/nginx && \
+    chown -R nginx:nginx /var/tmp/nginx
 
 # 커스텀 Nginx 설정 파일 복사
+COPY nginx.conf /etc/nginx/nginx.conf
 COPY custom-default.conf /etc/nginx/conf.d/default.conf
 
 # 빌드된 React 앱 복사
