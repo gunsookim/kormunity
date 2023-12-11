@@ -18,8 +18,8 @@ USER nginx
 
 COPY --from=build /app/build /usr/share/nginx/html
 # Nginx 설정을 수정하여 비 root 사용자가 사용할 수 있는 포트(예: 7080)를 리스닝하도록 설정
-RUN sed -i 's/listen[ \t]*80;/listen 7080;/g' /etc/nginx/conf.d/default.conf
-RUN sed -i 's/listen[ \t]*80;/listen 7080;/g' /etc/nginx/nginx.conf
+COPY custom-default.conf /etc/nginx/conf.d/default.conf
+
 
 EXPOSE 7080
 CMD ["nginx", "-g", "daemon off;"]
