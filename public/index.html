@@ -1,10 +1,5 @@
 <!DOCTYPE HTML>
-<!--
-	Telephasic by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<html lang="en">
 <head>
     <title>Telephasic by HTML5 UP</title>
     <meta charset="utf-8"/>
@@ -206,13 +201,13 @@
         .map_wrap {
             position: relative;
             width: 100%;
-            height: 350px;
+            height: 750px;
         }
 
         #category {
             position: absolute;
             top: 10px;
-            left: 10px;
+            left: 50%;
             border-radius: 5px;
             border: 1px solid #909090;
             box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
@@ -225,7 +220,6 @@
             float: left;
             list-style: none;
             width: 50px;
-            px;
             border-right: 1px solid #acacac;
             padding: 6px 0;
             text-align: center;
@@ -285,77 +279,6 @@
         #category li.on .category_bg {
             background-position-x: -46px;
         }
-
-        .placeinfo_wrap {
-            position: absolute;
-            bottom: 28px;
-            left: -150px;
-            width: 300px;
-        }
-
-        .placeinfo {
-            position: relative;
-            width: 100%;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 10px;
-            background: #fff;
-        }
-
-        .placeinfo:nth-of-type(n) {
-            border: 0;
-            box-shadow: 0px 1px 2px #888;
-        }
-
-        .placeinfo_wrap .after {
-            content: '';
-            position: relative;
-            margin-left: -12px;
-            left: 50%;
-            width: 22px;
-            height: 12px;
-            background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')
-        }
-
-        .placeinfo a, .placeinfo a:hover, .placeinfo a:active {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .placeinfo a, .placeinfo span {
-            display: block;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-
-        .placeinfo span {
-            margin: 5px 5px 0 5px;
-            cursor: default;
-            font-size: 13px;
-        }
-
-        .placeinfo .title {
-            font-weight: bold;
-            font-size: 14px;
-            border-radius: 6px 6px 0 0;
-            margin: -1px -1px 0 -1px;
-            padding: 10px;
-            color: #fff;
-            background: #d95050;
-            background: #d95050 url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png) no-repeat right 14px center;
-        }
-
-        .placeinfo .tel {
-            color: #0f7833;
-        }
-
-        .placeinfo .jibun {
-            color: #999;
-            font-size: 11px;
-            margin-top: 0;
-        }
     </style>
 
 
@@ -383,7 +306,14 @@
                     </li>
                     <li><a href="left-sidebar.html">News</a></li>
                     <li class="break"><a href="right-sidebar.html">Notice</a></li>
-                    <li><a href="no-sidebar.html">Useful Site List</a></li>
+                    <li><a href="no-sidebar.html">Useful Info</a>
+                        <ul>
+                            <li><a href="#" onclick="showSection('health-insurance')">Health Insurance</a></li>
+                            <li><a href="#" onclick="showSection('medical-visa')">Medical Visa</a></li>
+                            <li><a href="#" onclick="showSection('useful-sites')">Useful Sites</a></li>
+
+                        </ul>
+                    </li>
                 </ul>
             </nav>
 
@@ -443,27 +373,21 @@
                     </ul>
                 </div>
 
-                <!-- <div id="map"></div> -->
+            </article>
 
 
-                <p>Output kakao MAP API</p>
-                <p>NULL</p>
-                <p>Test page</p>
-        </article>
-
-
+        </div>
     </div>
-</div>
 
-<!-- Footer -->
-<div id="footer-wrapper">
-</div>
-<div id="copyright" class="container">
-    <ul class="menu">
-        <li>&copy; Untitled. All rights reserved.</li>
-        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-    </ul>
-</div>
+    <!-- Footer -->
+    <div id="footer-wrapper">
+    </div>
+    <div id="copyright" class="container">
+        <ul class="menu">
+            <li>&copy; Untitled. All rights reserved.</li>
+            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+    </div>
 </div>
 
 
@@ -477,6 +401,10 @@
 <!-- 카카오 맵 api -->
 <script type="text/javascript"
         src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=e2e959c16b849447250e9b1ed3f83fbf&libraries=services"></script>
+<!-- 서울스마트맵 api
+<script type="text/javascript"
+        src="https://map.seoul.go.kr/smgis/apps/mapsvr.do?cmd=getMapInfo&key="></script>
+-->
 <script>
 
     let markers = [];
