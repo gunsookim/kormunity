@@ -16,17 +16,11 @@ RUN mkdir -p /var/cache/nginx/client_temp /var/run /var/tmp/nginx \
 # 커스텀 Nginx 설정 파일 복사
 COPY custom-default.conf /etc/nginx/conf.d/default.conf
 
-# Nginx PID 파일 위치 변경
-RUN echo "pid /var/tmp/nginx/nginx.pid;" >> /etc/nginx/nginx.conf
-
 # 빌드된 React 앱 복사
 COPY --from=build /app/build /usr/share/nginx/html
 
 # Nginx를 non-root 사용자로 실행
 USER nginx
 
-# 포트 노출
 EXPOSE 7080
-
-# Nginx 실행
 CMD ["nginx", "-g", "daemon off;"]
